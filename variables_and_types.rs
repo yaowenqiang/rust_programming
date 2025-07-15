@@ -18,6 +18,7 @@ fn main() {
     demo_integers();
     demo_floats();
     demo_other_simple_types();
+    demo_additional_techniques();
 }
 
 fn demo_integers() {
@@ -77,4 +78,43 @@ fn demo_other_simple_types() {
 
     let middle_initial: char = 'c';
     print!("\nhey you with the middle initial {}", middle_initial);
+}
+
+// Inferring Types
+
+fn demo_additional_techniques() {
+    // Rust can infer types
+    let a = -12345;
+    let b = 3.14;
+    let c = 'x';
+    println!("\n a is {}, b is {}, c is {}", a, b, c);
+
+    // Variables are inmutable by default
+
+    let d = 0;
+    // d = 1;
+    print!("\n d is {}", d);
+
+    let mut e = 0;
+    print!("\n e originally is {}", e);
+    e = 1;
+    print!("\n e afterwards is {}", e);
+
+    // if you don't want to use a variable, prefix name with _ to avoid compiler warning
+    let _f = 0;
+
+    let g = 1.99;
+    let h = g as i32;
+    println!("\n g is {}, h is {}", g, h);
+
+    let num = "12345";
+    println!("\n num as a string is {}", num);
+
+    let num = 12345;
+
+    println!("\n num + 1 as a number is {}", num + 1);
+
+    const SECONDS_IN_HOUR: i32 = 3_600;
+    const SECONDS_IN_DAY: i32 = SECONDS_IN_HOUR * 24;
+    println!("\nThere are {} seconds in a day.", SECONDS_IN_DAY);
 }
