@@ -1,6 +1,7 @@
 fn main() {
     demo_if();
     demo_match();
+    demo_loops();
 }
 
 fn demo_if() {
@@ -65,4 +66,37 @@ fn demo_match() {
 
 
     println!("Result of match expression {}", res)
+}
+
+fn demo_loops() {
+    /*println!("\nUsing a infinite loop");
+    loop {
+        println!("This loop will go on forever, hit Ctrl + C to stop me!");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+    */
+
+    println!("\nUsing a wile loop");
+
+    let mut i = 0;
+    while i < 10 {
+        println!("{}", i);
+        i += 1;
+    }
+
+    println!("\nUsing a for loop over an array");
+    let arr = [99,15, 95, 100,82];
+    for elem in arr {
+        println!("{}", elem);
+    }
+
+    println!("\nUsing a for loop over a range(exclusive upper limit)");
+    for i in 0..10 {
+        println!("{}", i);
+    }
+
+    println!("\nUsng ia for loop over a range (inclusive upper limit)");
+    for i in 0 ..= 10 {
+        println!("{}", i);
+    }
 }
