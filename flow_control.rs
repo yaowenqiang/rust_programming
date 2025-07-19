@@ -2,6 +2,7 @@ fn main() {
     demo_if();
     demo_match();
     demo_loops();
+    demo_break_continue();
 }
 
 fn demo_if() {
@@ -99,4 +100,34 @@ fn demo_loops() {
     for i in 0 ..= 10 {
         println!("{}", i);
     }
+}
+
+fn demo_break_continue() {
+    println!("\nDemo using break and continue.");
+    let arr = [1,2,3,4,5];
+    for elem in arr {
+        if elem == 5 {
+            println!("Found 1, so break out of the loop compeletely");
+            break;
+        }
+        println!("{}", elem);
+    }
+
+    for elem in arr {
+        if elem < 5 {
+            println!("\nFound value less than 5, continue to next iteration");
+            continue;
+        }
+        println!("{}", elem);
+    }
+    
+    'outer: loop {
+        println!("Entered the outer loop.");
+        loop {
+            println!("Entered the inner loop");
+            break 'outer;
+       }
+    }
+    println!("Exited the outer loop");
+    println!("The end.");
 }
