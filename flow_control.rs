@@ -107,7 +107,7 @@ fn demo_break_continue() {
     let arr = [1,2,3,4,5];
     for elem in arr {
         if elem == 5 {
-            println!("Found 1, so break out of the loop compeletely");
+            println!("Found 5, so break out of the loop compeletely");
             break;
         }
         println!("{}", elem);
