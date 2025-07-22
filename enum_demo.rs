@@ -8,6 +8,7 @@ fn main() {
     demo_simple_enums();
     demo_enum_with_data();
     demo_using_option_enum();
+    demo_using_result_enum();
 }
 
 fn demo_simple_enums() {
@@ -50,4 +51,17 @@ fn sec_of_day(h: u32, m: u32, s: u32) -> Option<u32> {
     } else {
         return Option::None;
     }
+}
+
+fn demo_using_result_enum() {
+    println!("\nDemo using the Result<T, E> enum");
+    let res: Result<i32, std::num::ParseIntError>;
+    //res = i32::from_str_radix("FF", 16);
+    res = i32::from_str_radix("wibble", 16);
+
+    match res {
+        Ok(n) => println!("\nParsed str as i32:{}", n),
+        Err(e) => println!("\nErro occured:{}",e)
+    }
+
 }
