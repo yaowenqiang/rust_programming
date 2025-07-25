@@ -26,7 +26,7 @@ fn demo_enum_with_data() {
     let h = HouseLocation::Number(4);
     match h {
         HouseLocation::Number(n) => println!("Your live in house number {}", n),
-        HouseLocation::Name(s) => println!("Your live in house nameed {}", s),
+        HouseLocation::Name(s) => println!("Your live in house named {}", s),
         HouseLocation::Unknown => println!("Your house location is unknown"),
     }
 }

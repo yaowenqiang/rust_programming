@@ -8,9 +8,9 @@ fn main() {
 fn demo_if() {
     let age = 50;
     if age > 50 {
-        print!("You are old!");
+        println!("You are old!");
     } else {
-        print!("You are young ");
+        println!("You are young ");
     }
 
     let height = 1.67;
@@ -30,7 +30,7 @@ fn demo_if() {
     }
 
     let msg = if age > 50 { "old" } else { "young" };
-    print!("You are {}", msg);
+    println!("You are {}", msg);
 }
 
 fn demo_match() {
@@ -49,18 +49,18 @@ fn demo_match() {
         _ => print!("Something else"),
     }
     match num {
-        25 | 50 | 75 => println!("25, 50, or 7t"),
+        25 | 50 | 75 => println!("25, 50, or 75"),
         100 | 200 => println!("100 or 200"),
         _ => println!("Something else"),
     }
 
     match num {
-        x if x < 50 => println!("less then 50"),
+        x if x < 50 => println!("less than 50"),
         x if x == 75 => println!("75"),
         _ => println!("Something else"),
     }
     let res = match num {
-        x if x < 50 =>"less then 50",
+        x if x < 50 =>"less than 50",
        x if x == 75 => "75",
         _ => "Something else"
     };
@@ -77,7 +77,7 @@ fn demo_loops() {
     }
     */
 
-    println!("\nUsing a wile loop");
+    println!("\nUsing a while loop");
 
     let mut i = 0;
     while i < 10 {
@@ -87,7 +87,7 @@ fn demo_loops() {
 
     println!("\nUsing a for loop over an array");
     let arr = [99,15, 95, 100,82];
-    for elem in arr {
+    for elem in &arr {
         println!("{}", elem);
     }
 
