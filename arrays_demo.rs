@@ -1,8 +1,10 @@
+use std::collections::HashMap;
 fn main() {
     demo_arrays();
     demo_arrays_techniques();
     demo_tup0les();
     demo_vectors();
+    demo_maps();
 }
 
 fn demo_arrays() {
@@ -77,4 +79,31 @@ fn demo_vectors() {
     for item in _v3 {
         println!(" {}", item);
     }
+}
+
+fn demo_maps() {
+    println!("\nUsing maps");
+    let mut m: std::collections::HashMap<String, i32> = HashMap::new();
+    let mut _m2: HashMap<String, i32> = HashMap::new();
+    m.insert(String::from("UK"), 44);
+    m.insert(String::from("NO"), 47);
+    m.insert(String::from("5G"), 65);
+
+    m.entry(String::from("54")).or_insert(37);
+
+    let val = m["UK"];
+    println!("Value: {}", val);
+
+    let opt = m.get("UK");
+    match opt {
+        Some(value) => println!("Value: {}", value),
+        None => println!("No value")
+    }
+
+    println!("Entries in m:");
+
+    for entry in &m {
+        println!("  {:?}", entry);
+    }
+
 }
