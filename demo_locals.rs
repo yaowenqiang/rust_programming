@@ -30,3 +30,7 @@ fn static_init_at_run_time() {
     println!("timestamp: {}", (*TIMESTAMP).format("%T"));
 }
 
+fn f1() {
+    println!("\nIn f1, GLOBAL_MESSAGE: {}", GLOBAL_MESSAGE);
+    println!("\nIn f1, GLOBAL_TIMESTAMP: {}", GLOBAL_TIMESTAMP);
+}
