@@ -31,5 +31,7 @@ fn using_mutable_string_objects() {
     println!("{} {:p}, {}", s5, s5.as_ptr(),s5.len());
     s5.push_str(" world");
     println!("{} {:p}, {}", s5, s5.as_ptr(),s5.len());
+    let s6 = s5.trim().to_uppercase();
+    println!("{} {:p}, {}", s6, s6.as_ptr(),s6.len());
 
 }

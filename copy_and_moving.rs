@@ -10,4 +10,10 @@ fn main() {
     println!("{}", s3);
     println!("{:?}", s3);
     println!("{:#?}", s3);
+
+    let mut s4 = String::from("I am mutable");
+    let s5 = s4.clone();
+    s4.push_str(", and can be pushed");
+    println!("{}", s4);
+    println!("{}", s5);
 }
