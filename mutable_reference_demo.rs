@@ -12,7 +12,7 @@ fn some_higher_level_func() {
     println!("{}", s);
 }
 
-fn some_func(iparam:&mut i32, sparam:&mut String) {
+fn some_func(iparam: &mut i32, sparam: &mut String) {
     println!("{:p} {:?} {:?}", iparam, iparam, *iparam);
     println!("{:p} {:?} {:?}", sparam, sparam, *sparam);
     *iparam += 10;
