@@ -1,3 +1,17 @@
-/target
-hello_world_via_cargo/target/
+# 编译后的二进制文件
+borrow_check
+enum_demo
+flow_control
+hello_world
 variables_and_types
+arrays_demo
+string_demo
+
+# Cargo 相关
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# 其他
+*.log
+.DS_Store

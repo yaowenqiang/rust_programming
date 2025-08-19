@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "hello_world",
+    "variables_and_types",
+    "flow_control",
+    "enum_demo",
+    "borrow_check",
+    "arrays_demo",
+    "string_demo",
+    "function_examples",
+]
