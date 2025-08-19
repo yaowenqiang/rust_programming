@@ -31,4 +31,10 @@ path = "src/bin/arrays_demo.rs"
 name = "string_demo"
 path = "src/bin/string_demo.rs"
 
+[[bin]]
+name = "demo_static_global"
+path = "src/bin/demo_static_global.rs"
+
 [dependencies]
+lazy_static = "1.4"
+chrono = "0.4"

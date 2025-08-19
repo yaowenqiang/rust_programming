@@ -1,6 +1,6 @@
 use std::sync::atomic::{AtomicI32, Ordering};
 
-static GLOBAL_COUNT : AtomicI32 = AtomicI32::new(0);
+static GLOBAL_COUNT: AtomicI32 = AtomicI32::new(0);
 
 pub fn do_it() {
     println!("In demo_static_mutable::do_it()");
@@ -13,19 +13,25 @@ pub fn do_it() {
 }
 
 unsafe fn f1() {
-    static mut LOCAL_COUNT : i32 = 0;
+    static mut LOCAL_COUNT: i32 = 0;
     let mut x = 0;
     LOCAL_COUNT += 1;
     x += 1;
     GLOBAL_COUNT.fetch_add(1, Ordering::Relaxed);
-    println!("In f1:LOCAL_COUNT: {}, x: {}, GLOBAL_COUNT: {}", LOCAL_COUNT, x, GLOBAL_COUNT);
+    println!(
+        "In f1:LOCAL_COUNT: {}, x: {}, GLOBAL_COUNT: {}",
+        LOCAL_COUNT, x, GLOBAL_COUNT
+    );
 }
 
 fn f1() {
-    static LOCAL_COUNT : AtomicI32 = AtomicI32::new(0);
+    static LOCAL_COUNT: AtomicI32 = AtomicI32::new(0);
     let mut x = 0;
     LOCAL_COUNT.fetch_add(1, Ordering::Relaxed);
     x += 1;
     GLOBAL_COUNT.fetch_add(1, Ordering::Relaxed);
-    println!("In f1:LOCAL_COUNT: {}, x: {}, GLOBAL_COUNT: {}", LOCAL_COUNT, x, GLOBAL_COUNT);
+    println!(
+        "In f1:LOCAL_COUNT: {}, x: {}, GLOBAL_COUNT: {}",
+        LOCAL_COUNT, x, GLOBAL_COUNT
+    );
 }

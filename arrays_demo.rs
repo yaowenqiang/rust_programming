@@ -97,7 +97,7 @@ fn demo_maps() {
     let opt = m.get("UK");
     match opt {
         Some(value) => println!("Value: {}", value),
-        None => println!("No value")
+        None => println!("No value"),
     }
 
     println!("Entries in m:");
@@ -105,5 +105,4 @@ fn demo_maps() {
     for entry in &m {
         println!("  {:?}", entry);
     }
-
 }

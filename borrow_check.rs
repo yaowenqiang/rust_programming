@@ -26,7 +26,4 @@ fn main() {
     //s2.push_str(" world");
     //ush_str(&mut s2, "world")
     println!("{}", r4);
-
-
-
 }

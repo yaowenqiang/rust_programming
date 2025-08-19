@@ -60,11 +60,10 @@ fn demo_match() {
         _ => println!("Something else"),
     }
     let res = match num {
-        x if x < 50 =>"less than 50",
-       x if x == 75 => "75",
-        _ => "Something else"
+        x if x < 50 => "less than 50",
+        x if x == 75 => "75",
+        _ => "Something else",
     };
-
 
     println!("Result of match expression {}", res)
 }
@@ -86,7 +85,7 @@ fn demo_loops() {
     }
 
     println!("\nUsing a for loop over an array");
-    let arr = [99,15, 95, 100,82];
+    let arr = [99, 15, 95, 100, 82];
     for elem in &arr {
         println!("{}", elem);
     }
@@ -97,14 +96,14 @@ fn demo_loops() {
     }
 
     println!("\nUsng ia for loop over a range (inclusive upper limit)");
-    for i in 0 ..= 10 {
+    for i in 0..=10 {
         println!("{}", i);
     }
 }
 
 fn demo_break_continue() {
     println!("\nDemo using break and continue.");
-    let arr = [1,2,3,4,5];
+    let arr = [1, 2, 3, 4, 5];
     for elem in arr {
         if elem == 5 {
             println!("Found 5, so break out of the loop compeletely");
@@ -120,13 +119,13 @@ fn demo_break_continue() {
         }
         println!("{}", elem);
     }
-    
+
     'outer: loop {
         println!("Entered the outer loop.");
         loop {
             println!("Entered the inner loop");
             break 'outer;
-       }
+        }
     }
     println!("Exited the outer loop");
     println!("The end.");

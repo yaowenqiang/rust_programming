@@ -6,12 +6,11 @@ fn main() {
     println!("{}", s);
 }
 
-fn f1(iparam:i32, sparam: String) {
+fn f1(iparam: i32, sparam: String) {
     println!("{}", iparam);
     println!("{}", sparam);
     println!("{}, {}", iparam, sparam);
 }
-
 
 fn f2(iparam: &i32, sparam: &String) {
     println!("{}", iparam);
@@ -37,4 +36,3 @@ fn some_higher_level_func() {
 fn some_func(s: &String) {
     println!("{}", s);
 }
-

@@ -1,5 +1,5 @@
-use once_cell::sync::Lazy;
 use chrono::{Datetime, Utc};
+use once_cell::sync::Lazy;
 use std::thread::sleep;
 use std::time::Duration;
 pub fn do_it() {
@@ -22,7 +22,7 @@ fn static_init_at_compile_time() {
 fn static_init_at_run_time() {
     println!("Curr time:{}", Utc::now().format("%T"));
     static TIMESTAMP: Lazy<DateTime<Utc>> = Lazy::new(|| {
-        sleep(Duration::new(5,0));
+        sleep(Duration::new(5, 0));
         let now = Utc::now();
         println!("Curr time:{}", now.format("%T"));
         return now;

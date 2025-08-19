@@ -61,7 +61,6 @@ fn demo_using_result_enum() {
 
     match res {
         Ok(n) => println!("\nParsed str as i32:{}", n),
-        Err(e) => println!("\nErro occured:{}",e)
+        Err(e) => println!("\nErro occured:{}", e),
     }
-
 }
