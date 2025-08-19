@@ -1,0 +1,1 @@
+/root/rust_programming/rust_cargo_project/target/debug/variables_and_types: /root/rust_programming/rust_cargo_project/src/bin/variables_and_types.rs /root/rust_programming/rust_cargo_project/src/lib.rs /root/rust_programming/rust_cargo_project/src/mytypes.rs

@@ -1,0 +1,34 @@
+[package]
+name = "rust_cargo_project"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "hello_world"
+path = "src/bin/hello_world.rs"
+
+[[bin]]
+name = "variables_and_types"
+path = "src/bin/variables_and_types.rs"
+
+[[bin]]
+name = "flow_control"
+path = "src/bin/flow_control.rs"
+
+[[bin]]
+name = "enum_demo"
+path = "src/bin/enum_demo.rs"
+
+[[bin]]
+name = "borrow_check"
+path = "src/bin/borrow_check.rs"
+
+[[bin]]
+name = "arrays_demo"
+path = "src/bin/arrays_demo.rs"
+
+[[bin]]
+name = "string_demo"
+path = "src/bin/string_demo.rs"
+
+[dependencies]
