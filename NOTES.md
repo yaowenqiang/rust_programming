@@ -15,3 +15,7 @@
 > cargo build --release
 > cargo check
 
+## repl
+
+> cargo install  irust
+> cargo install  evcxr_repl
