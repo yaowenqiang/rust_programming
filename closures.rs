@@ -3,7 +3,7 @@ use std::thread::sleep;
 use std::time::Duration;
 fn main() {
     let get_timestamp = || -> DateTime<Utc> { Utc::now() };
-    println!("{}", get_timestamp());
+    println!("{}", get_timestamp().format("%T"));
 
     let reciprocal = |m: f64| {
         if m == 0.0 {
