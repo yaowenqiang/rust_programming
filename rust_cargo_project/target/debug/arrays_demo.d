@@ -1,1 +1,0 @@
-/root/rust_programming/rust_cargo_project/target/debug/arrays_demo: /root/rust_programming/rust_cargo_project/src/bin/arrays_demo.rs /root/rust_programming/rust_cargo_project/src/lib.rs /root/rust_programming/rust_cargo_project/src/mytypes.rs
