@@ -18,6 +18,26 @@ impl Point {
     fn to_string(self: &Self) -> String {
         format!("[{},{}]", self.x, self.y)
     }
+
+    fn reset_v1(&mut self) {
+        self.x = 0;
+        self.y = 0;
+    }
+
+    fn reset_v2(self: &mut Point) {
+        self.x = 0;
+        self.y = 0;
+    }
+
+    fn reset_v3(self: &mut Self) {
+        self.x = 0;
+        self.y = 0;
+    }
+
+    fn move_by(&mut self, dx: i32, dy: i32) {
+        self.x += dx;
+        self.y += dy;
+    }
 }
 
 impl fmt::Display for Point {
@@ -26,10 +46,20 @@ impl fmt::Display for Point {
     }
 }
 fn main() {
-    let p = Point { x: 1, y: 2 };
+    let mut p = Point { x: 1, y: 2 };
     p.print_v1();
     p.print_v2();
     p.print_v3();
+    println!("{}", p.to_string());
+    println!("{:?}",p);
+    println!("{:#?}",p);
+    println!("{}",p);
+
+    p.reset_v3();
+    p.reset_v2();
+    p.reset_v1();
+    p.move_by(10, 20);
+    println!("reset Point");
     println!("{}", p.to_string());
     println!("{:?}",p);
     println!("{:#?}",p);
