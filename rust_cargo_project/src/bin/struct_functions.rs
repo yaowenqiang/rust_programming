@@ -4,6 +4,13 @@ struct Point {
     x: i32,
     y: i32,
 }
+
+#[derive(Debug)]
+struct Point3D {
+    x: i32,
+    y: i32,
+    z: i32,
+}
 impl Point {
     fn print_v1(&self) {
        println!("In print_v1(), point is [{},{}].", self.x, self.y);
@@ -45,6 +52,15 @@ impl fmt::Display for Point {
         write!(f, "({}, {})", self.x, self.y)
     }
 }
+impl Point3D {
+    fn new(x: i32, y: i32, z: i32) -> Point3D {
+        Point3D{
+            x,
+            y,
+            z
+        }
+    }
+}
 fn main() {
     let mut p = Point { x: 1, y: 2 };
     p.print_v1();
@@ -64,4 +80,9 @@ fn main() {
     println!("{:?}",p);
     println!("{:#?}",p);
     println!("{}",p);
+
+    let p3 = Point3D::new(2, 3, 4);
+    println!("{:?}", p3);
+    let mut p4 = Point3D::new(2, 3, 4);
+    println!("{:?}", p4);
 }
