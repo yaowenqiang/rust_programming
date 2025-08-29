@@ -14,11 +14,10 @@ fn main() {
     };
     println!("Reciprocal: {}", reciprocal(5.0));
 
-    let reciprocal2 = |n| if n == 0.0 {0.0} else { 1.0 / n };
-    let reciprocal3 = |n| if n == 0 {0} else { 1 / n };
+    let reciprocal2 = |n| if n == 0.0 { 0.0 } else { 1.0 / n };
+    let reciprocal3 = |n| if n == 0 { 0 } else { 1 / n };
     println!("Reciprocal2: {}", reciprocal2(0.0));
     println!("Reciprocal3: {}", reciprocal3(0));
-
 
     let get_timestamp_after_delay = |seconds: u64| -> DateTime<Utc> {
         sleep(Duration::new(seconds, 0));
@@ -26,7 +25,7 @@ fn main() {
     };
     println!("Timestamp: {}", get_timestamp_after_delay(5).format("%D"));
 
-    let product = |a: i32, b: i32| -> i32 { a * b};
+    let product = |a: i32, b: i32| -> i32 { a * b };
     println!("Product: {}", product(10, 20));
 
     let get_timestamp2 = || Utc::now();
@@ -47,7 +46,7 @@ fn capture_immutable_reference() {
 
     let display_heading = |s| {
         println!("{}", b1);
-        println!("| {:<15} |",s);
+        println!("| {:<15} |", s);
         println!("{}", b2);
     };
 
@@ -63,7 +62,7 @@ fn capture_mutable_reference() {
         b1.push_str(" xxx");
         b2.push_str(" xxx");
         println!("{}", b1);
-        println!("| {:<15} |",s);
+        println!("| {:<15} |", s);
         println!("{}", b2);
     };
 
@@ -83,7 +82,6 @@ fn capture_value_automatically() {
 
     consume_message();
     // consume_message();
-
 }
 
 fn capture_value_forcibly() {
@@ -91,10 +89,9 @@ fn capture_value_forcibly() {
     println!("Start of method...");
     std::thread::spawn(move || {
         println!("Message at start of closure: {message}");
-        std::thread::sleep(Duration::new(10,0));
+        std::thread::sleep(Duration::new(10, 0));
         println!("Message at end of closure: {message}");
     });
 
     println!("End of method...");
-
 }

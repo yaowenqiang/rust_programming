@@ -1,5 +1,5 @@
-use std::iter::repeat_with;
 use rust_cargo_project::mytypes::Employee;
+use std::iter::repeat_with;
 
 fn main() {
     do_it();
@@ -80,12 +80,11 @@ fn reward_employee(e: &mut Employee) {
     e.salary += 500;
 }
 
-
 fn build_employee(name: String, salary: u64, fulltime: bool) -> Employee {
     Employee {
         name,
         salary,
-        fulltime
+        fulltime,
     }
 }
 
@@ -97,11 +96,18 @@ fn build_employee(name: String, salary: u64, fulltime: bool) -> Employee {
 //     }
 // }
 
-
-fn choose_employee<'a> (e1: &'a Employee, e2:&'a Employee) -> &'a Employee {
-    if e1.salary >e2.salary {e1} else {e2}
+fn choose_employee<'a>(e1: &'a Employee, e2: &'a Employee) -> &'a Employee {
+    if e1.salary > e2.salary {
+        e1
+    } else {
+        e2
+    }
 }
 
-fn choose_mutable_employee<'a> (e1: &'a mut Employee, e2:&'a mut Employee) -> &'a mut Employee {
-    if e1.salary >e2.salary {e1} else {e2}
+fn choose_mutable_employee<'a>(e1: &'a mut Employee, e2: &'a mut Employee) -> &'a mut Employee {
+    if e1.salary > e2.salary {
+        e1
+    } else {
+        e2
+    }
 }

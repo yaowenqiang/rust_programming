@@ -15,7 +15,6 @@ fn main() {
     println!("{r}");
     r.push_str(" hi");
     println!("{r}");
-
 }
 
 /*
@@ -72,7 +71,7 @@ fn bad_func(mark: i32) -> String {
 }
 */
 
-fn get_first_word(s: &str) ->&str {
+fn get_first_word(s: &str) -> &str {
     let mut pos = 0;
     for ch in s.chars() {
         if ch == ' ' {
@@ -84,10 +83,14 @@ fn get_first_word(s: &str) ->&str {
 }
 
 fn get_message(mark: i32) -> &'static str {
-   if mark >= 50 {"PASS"}  else {"FAIL"}
+    if mark >= 50 {
+        "PASS"
+    } else {
+        "FAIL"
+    }
 }
 
-fn some_func(s: &mut String) ->&mut String {
-   s.push_str(" world");
+fn some_func(s: &mut String) -> &mut String {
+    s.push_str(" world");
     s
 }

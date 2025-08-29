@@ -10,10 +10,8 @@ pub enum HouseLocation {
     Unknown,
 }
 
-
-pub struct Employee  {
-   pub name: String,
-   pub salary: u64,
-    pub fulltime: bool
-
+pub struct Employee {
+    pub name: String,
+    pub salary: u64,
+    pub fulltime: bool,
 }
