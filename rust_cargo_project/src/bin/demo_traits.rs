@@ -1,6 +1,6 @@
 use chrono::Utc;
 use std::collections::VecDeque;
-use std::fmt::{Display, Pointer};
+use std::fmt::{Debug, Display, Formatter, Pointer, Result};
 
 trait Print {
     fn print(&self);
@@ -68,11 +68,37 @@ struct Point {
     x: i32,
     y: i32,
 }
+#[derive(Debug)]
 struct Employee {
     name: String,
     salary: i32,
     fulltime: bool,
 }
+
+impl Drop for Employee {
+    fn drop(&mut self) {
+        println!("{} is dropped", self.name);
+    }
+}
+
+impl Display for Employee {
+    // fn fmt(&self, f: &mut Formatter) -> Result {
+    //     write!(f, "name: {} salary: {}, fulltime: {}", self.name, self.salary, self.fulltime)
+    // }
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        f.debug_struct("Employee")
+            .field("name", &self.name)
+            .field("salary", &self.salary)
+            .field("fulltime", &self.fulltime)
+            .finish()
+    }
+}
+
+// impl Debug for Employee {
+//     fn fmt(&self, f: &mut Formatter) -> Result {
+//         write!(f, "name: {} salary: {}, fulltime: {}", self.name, self.salary, self.fulltime)
+//     }
+// }
 
 impl Employee {
     fn new(name: String, salary: i32, fulltime: bool) -> Employee {
@@ -110,10 +136,13 @@ fn print_something(p: &dyn Print) {
     println!("from print_something");
     p.print();
 }
+
 fn main() {
     let employee = Employee::new("name".to_string(), 10, false);
     employee.print();
-    let obj1 = Employee::new("name".to_string(), 10, true);
+    let obj1 = Employee::new("obj1".to_string(), 10, true);
+    println!("{obj1}");
+    println!("{:?}", obj1);
     let obj2: Point = Point { x: 10, y: 10 };
     print_something(&obj1);
     print_something(&obj2);
