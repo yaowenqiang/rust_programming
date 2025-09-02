@@ -80,6 +80,20 @@ impl Drop for Employee {
         println!("{} is dropped", self.name);
     }
 }
+#[derive(Debug, Clone)]
+struct Flight {
+    origin: String,
+    destination: String,
+}
+
+// impl Clone for Flight {
+//    fn clone(&self) -> Flight {
+//        Flight {
+//            origin: self.origin.clone(),
+//            destination: self.destination.clone(),
+//        }
+//    }
+// }
 
 impl Display for Employee {
     // fn fmt(&self, f: &mut Formatter) -> Result {
@@ -137,6 +151,21 @@ fn print_something(p: &dyn Print) {
     p.print();
 }
 
+#[derive(Debug, Copy, Clone)]
+struct Currency {
+    dollars: i32,
+    cents: i32,
+}
+
+// impl Copy for Currency {}
+//
+// impl Clone for Currency {
+//     fn clone(&self) -> Currency {
+//         println!("Custom cloning");
+//         *self
+//     }
+// }
+
 fn main() {
     let employee = Employee::new("name".to_string(), 10, false);
     employee.print();
@@ -163,4 +192,23 @@ fn main() {
             None => break,
         }
     }
+
+    let flight = Flight {
+        origin: "abc".to_string(),
+        destination: "def".to_string(),
+    };
+
+    let flight2 = flight.clone();
+    println!("{:?}", flight);
+    println!("{:?}", flight2);
+
+    let currency = Currency {
+        dollars: 100,
+        cents: 200,
+    };
+    println!("{:?}", currency);
+    let mut currency2 = currency;
+
+    currency2.dollars *= 10;
+    println!("{:?}", currency2);
 }
