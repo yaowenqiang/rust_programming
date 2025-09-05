@@ -17,6 +17,14 @@ fn main() {
     println!("{:?}", c2);
     let i = [1, 2, 3, 4];
     process_array_ints(&i);
+    process_array::<i32>(&i);
+    let j = ["abc".to_string()];
+    process_array::<String>(&j);
+    let k = ["你好".to_string()];
+    process_array(&k);
+    let l = ["a"];
+    process_array::<&'static str>(&l);
+    display_array(&l);
 }
 
 fn process_array_ints(arr: &[i32]) {
@@ -25,4 +33,19 @@ fn process_array_ints(arr: &[i32]) {
         arr.len(),
         std::mem::size_of::<i32>()
     );
+}
+
+fn process_array<T>(arr: &[T]) {
+    println!(
+        "{} elements, {} bytes each",
+        arr.len(),
+        std::mem::size_of::<T>()
+    );
+}
+
+// type constraints
+fn display_array<T: std::fmt::Debug>(arr: &[T]) {
+    for elem in arr {
+        println!("{:?}", elem);
+    }
 }
