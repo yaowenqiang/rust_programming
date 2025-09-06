@@ -1,4 +1,7 @@
-#[derive(Debug, PartialEq)]
+use std::collections::HashMap;
+use std::hash::Hash;
+
+#[derive(Debug, PartialEq, Eq, Hash)]
 struct Coordinate<T> {
     x: T,
     y: T,
@@ -17,6 +20,36 @@ struct TimeSeconds {
 #[derive(PartialEq)]
 struct TimeMinutes {
     s: i32,
+}
+
+#[derive(Debug)]
+struct Emp {
+    name: String,
+    salary: f32,
+}
+
+impl Emp {
+    fn new(name: &str, salary: f32) -> Emp {
+        Emp {
+            name: name.to_string(),
+            salary,
+        }
+    }
+}
+
+#[derive(Eq, PartialEq, Hash)]
+struct EmpCode {
+    country: String,
+    empnum: String,
+}
+
+impl EmpCode {
+    fn new(country: &str, empnum: &str) -> EmpCode {
+        EmpCode {
+            country: country.to_string(),
+            empnum: empnum.to_string(),
+        }
+    }
 }
 
 impl PartialEq<TimeMinutes> for TimeSeconds {
@@ -89,6 +122,14 @@ fn main() {
     let s1 = TimeSeconds { s: 60 };
     let m1 = TimeMinutes { s: 1 };
     println!("t1 == m1? {}", s1 == m1);
+
+    let mut staff: HashMap<EmpCode, Emp> = HashMap::new();
+    staff.insert(EmpCode::new("USA", "123"), Emp::new("Jack", 1000.0));
+    staff.insert(EmpCode::new("UK", "456"), Emp::new("Bill", 2000.0));
+    staff.insert(EmpCode::new("UK", "789"), Emp::new("Marry", 2100.0));
+
+    let emp = &staff[&EmpCode::new("UK", "789")];
+    println!("{:?}", emp);
 }
 
 fn process_array_ints(arr: &[i32]) {
