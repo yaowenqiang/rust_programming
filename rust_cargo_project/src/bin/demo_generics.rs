@@ -216,9 +216,89 @@ fn main() {
         "{:?}",
         m4.clamp(ExamMark { value: 0 }, ExamMark { value: 100 })
     );
+
+    let s = String::from("hello");
+    receive_fnonce(|| {
+        println!("{:?}", s);
+        std::mem::drop(s);
+    });
+
+    let mut s2 = String::from("world");
+    receive_fnonce(|| {
+        s2.push_str(" world");
+        println!("{:?}", s2);
+    });
+
+    let s3 = String::from("hello");
+    receive_fnonce(|| println!("{}", s3));
+
+    let mut s4 = String::from("hello");
+    receive_fnmut(|| {
+        s4.push_str(" world");
+        println!("{:?}", s4);
+    });
+
+    // let s5 = String::from("hello");
+    // receive_fnmut(|| {
+    //     println!("{}", s5);
+    //     std::mem::drop(s5);
+    // });
+
+    let s6 = String::from("hello");
+    receive_fnmut(|| {
+        println!("{}", s6);
+    });
+
+    // let s7 = String::from("hello");
+    // receive_fn(|| {
+    //     println!("{}", s7);
+    //     std::mem::drop(s7);
+    // });
+
+    // let mut s7 = String::from("hello");
+    // receive_fn(|| {
+    //     s7.push_str(" world");
+    //     println!("{}", s7);
+    // });
+
+    let mut s7 = String::from("hello");
+    receive_fn(|| {
+        println!("{}", s7);
+    });
 }
 
 #[derive(Ord, PartialOrd, Eq, PartialEq, Copy, Clone, Debug)]
 struct ExamMark {
     value: i32,
+}
+
+fn receive_fnonce2<F>(func: F) -> i32
+where
+    F: FnOnce() -> i32,
+{
+    println!("from receive_fnonce:");
+    func()
+}
+fn receive_fnonce<F>(func: F)
+where
+    F: FnOnce(),
+{
+    println!("from receive_fnonce:");
+    func();
+}
+
+fn receive_fnmut<F>(mut func: F)
+where
+    F: FnMut(),
+{
+    func();
+    func();
+}
+
+fn receive_fn<F>(func: F)
+where
+    F: Fn(),
+{
+    func();
+    func();
 }
