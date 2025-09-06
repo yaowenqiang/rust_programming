@@ -198,4 +198,27 @@ fn main() {
     println!("a1.gt(a2)?: {}", a1.gt(&a2));
     println!("a1 >= a2?: {}", a1 >= a2);
     println!("a1.ge(a2)?: {}", a1.ge(&a2));
+
+    let m1 = ExamMark { value: 90 };
+    let m2 = ExamMark { value: 99 };
+    let m3 = ExamMark { value: 180 };
+    let m4 = ExamMark { value: 042 };
+
+    // let min = m1.min(m2);
+    // let max = m1.max(m2);
+    println!("m1.min(m2): {:?}", m1.min(m2));
+    println!("m1.max(m2): {:?}", m1.max(m2));
+    println!(
+        "{:?}",
+        m3.clamp(ExamMark { value: 0 }, ExamMark { value: 100 })
+    );
+    println!(
+        "{:?}",
+        m4.clamp(ExamMark { value: 0 }, ExamMark { value: 100 })
+    );
+}
+
+#[derive(Ord, PartialOrd, Eq, PartialEq, Copy, Clone, Debug)]
+struct ExamMark {
+    value: i32,
 }
