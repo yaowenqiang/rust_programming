@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::hash::Hash;
 
@@ -10,6 +11,11 @@ struct Coordinate<T> {
 
 struct Angle {
     degrees: i32,
+}
+#[derive(PartialOrd, Ord, PartialEq, Eq, Debug)]
+struct Currency {
+    dollars: i32,
+    cents: i32,
 }
 
 #[derive(PartialEq)]
@@ -67,6 +73,37 @@ impl PartialEq<TimeSeconds> for TimeMinutes {
 impl PartialEq for Angle {
     fn eq(&self, other: &Self) -> bool {
         self.degrees % 360 == other.degrees % 360
+    }
+}
+
+impl PartialOrd for Angle {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        let d1 = self.degrees % 360;
+        let d2 = other.degrees % 360;
+        Some(d1.cmp(&d2))
+    }
+}
+
+fn process_array_ints(arr: &[i32]) {
+    println!(
+        "{} elements, {} bytes each ",
+        arr.len(),
+        std::mem::size_of::<i32>()
+    );
+}
+
+fn process_array<T>(arr: &[T]) {
+    println!(
+        "{} elements, {} bytes each",
+        arr.len(),
+        std::mem::size_of::<T>()
+    );
+}
+
+// type constraints
+fn display_array<T: std::fmt::Debug>(arr: &[T]) {
+    for elem in arr {
+        println!("{:?}", elem);
     }
 }
 
@@ -130,27 +167,35 @@ fn main() {
 
     let emp = &staff[&EmpCode::new("UK", "789")];
     println!("{:?}", emp);
-}
 
-fn process_array_ints(arr: &[i32]) {
-    println!(
-        "{} elements, {} bytes each ",
-        arr.len(),
-        std::mem::size_of::<i32>()
-    );
-}
+    let c1 = Currency {
+        dollars: 10,
+        cents: 75,
+    };
+    let c2 = Currency {
+        dollars: 20,
+        cents: 50,
+    };
+    let c3 = Currency {
+        dollars: 30,
+        cents: 75,
+    };
 
-fn process_array<T>(arr: &[T]) {
-    println!(
-        "{} elements, {} bytes each",
-        arr.len(),
-        std::mem::size_of::<T>()
-    );
-}
+    println!("c1 < c2?: {}", c1 < c2);
+    println!("c1 <= c2?: {}", c1 <= c2);
+    println!("c1 > c2?: {}", c1 > c2);
+    println!("c1 >= c2?: {}", c1 >= c2);
 
-// type constraints
-fn display_array<T: std::fmt::Debug>(arr: &[T]) {
-    for elem in arr {
-        println!("{:?}", elem);
-    }
+    let a1 = Angle { degrees: 10 };
+    let a2 = Angle { degrees: 400 };
+
+    println!("a1 < a2?: {}", a1 < a2);
+    println!("a1.lt(a2)?: {}", a1.lt(&a2));
+    println!("a1 <= a2?: {}", a1 <= a2);
+    println!("a1.le(a2)?: {}", a1.le(&a2));
+
+    println!("a1 > a2?: {}", a1 > a2);
+    println!("a1.gt(a2)?: {}", a1.gt(&a2));
+    println!("a1 >= a2?: {}", a1 >= a2);
+    println!("a1.ge(a2)?: {}", a1.ge(&a2));
 }
