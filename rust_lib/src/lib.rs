@@ -1,6 +1,6 @@
 use std::os::raw::c_int;
 #[unsafe(no_mangle)]
-pub extern "C" fn add2(a: c_int, b: c_int) -> c_int {
+pub extern "C" fn add(a: c_int, b: c_int) -> c_int {
     a + b
 }
 
@@ -22,7 +22,7 @@ pub extern "C" fn free_string(s: *mut u8) {
     }
 }
 
-pub fn add(left: u64, right: u64) -> u64 {
+pub fn add2(left: u64, right: u64) -> u64 {
     left + right
 }
 
