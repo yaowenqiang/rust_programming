@@ -19,3 +19,4 @@ hello_world_via_cargo/target/
 rust_cargo_project/target/
 .idea
 rust_lib/target
+rust_python/target
