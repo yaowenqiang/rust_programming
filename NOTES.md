@@ -42,3 +42,27 @@ exit 0
 ```
 
 > chmod +x .git/hooks/pre-commit
+
+## dependencies
+
+> cargo tree
+> cargo install cargo-bloat
+> cargo bloat
+
+
+[dependencies]
+axum = '0.6.19'
+
+[dependencies]
+axum = '=0.6.19'
+
+> cargo vendor
+>
+
+## security
+
+> cargo install cargo-audit
+
+> cargo install cargo-outdated
+> cargo install cargo-deny
+> 

@@ -20,3 +20,6 @@ rust_cargo_project/target/
 .idea
 rust_lib/target
 rust_python/target
+vendor
+target
+csv_parser/target
