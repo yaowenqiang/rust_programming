@@ -1,41 +1,40 @@
-2021-08-30,2021-09-08.C++ course in Kongsberg
-2021-10-04,2021-10-10.Docker/Kubernetes course in Oslo
-2021-10-17,2021-10-24.Spring Boot course in Oslo
-2021-11-02,2021-11-13.Malta
-2021-11-21,2021-11-25.Kotlin course in Oslo
-2022-02-08,2022-02-13.EDD and Kotlin courses in Oslo
-2022-02-27,2022-03-06.St. Anton
-2022-03-13,2022-03-20.C# course in Stavanger
-2022-04-10,2022-04-15.K8S course in Copenhagen
-2022-05-08,2022-05-15.Modern C++ course in Kongsberg
-2022-05-26,2022-06-01.Monaco
-2022-06-19,2022-06-26.Spring Boot and k8S courses in Oslo
-2022-07-06,2022-07-21.Bardolino
-2022-08-21,2022-08-26.Pyspark course in Oslo
-2022-08-31,2022-09-04.Python Intro course in Oslo
-2022-09-04,2022-09-18.C++ courses in Kongsberg
-2022-09-21,2022-09-29.Rhodes
-2022-09-04,2022-09-14.Madrid and Oslo
-2022-11-06,2022-11-13.K8S course in Oslo
-2023-01-08,2023-01-14.Advanced Java course in Oslo
-2023-01-23,2023-01-29.C++ Programming course in Copenhagen
-2023-02-12,2023-02-18.Spring Boot course in Bergen
-2023-03-12,2023-03-19.Spring Boot course in Sogndal
-2023-03-19,2023-03-23.Spring Boot course in Oslo
-2023-04-01,2023-04-09.Skiing in St Anton
-2023-04-16,2023-04-22.C++ in Denmark
-2023-05-08,2023-05-13.PySpark in Oslo
-2023-05-15,2023-05-19.Prague???
-2023-05-29,2023-06-01.Andalsnes???
-2023-06-04,2023-06-11.C++ in Kongsberg
-2023-06-11,2023-06-16.Spring Boot course in Oslo
-2023-06-25,2023-06-29.C++ TDD in Kongsberg???
-2023-07-05,2023-07-20.Switzerland and France
-2023-08-30,2023-09-10.Bardolino
-2023-09-10,2023-09-17.React in Sogndal???
-2023-09-17,2023-09-24.C++ in Kongsberg
-2023-10-01,2023-10-08.C++ in Kongsberg
-2023-10-08,2023-10-15.C++ in Kongsberg???
-2023-10-15,2023-10-22.C++ in Kongsberg
-2023-12-03,2023-12-09.C++ Programming course in Copenhagen
-2025-09-13,1025-12-31.demo
+2021-08-30,2021-09-08,C++ course in Kongsberg
+2021-10-04,2021-10-10,Docker/Kubernetes course in Oslo
+2021-10-17,2021-10-24,Spring Boot course in Oslo
+2021-11-02,2021-11-13,Malta
+2021-11-21,2021-11-25,Kotlin course in Oslo
+2022-02-08,2022-02-13,EDD and Kotlin courses in Oslo
+2022-02-27,2022-03-06,St. Anton
+2022-03-13,2022-03-20,C# course in Stavanger
+2022-04-10,2022-04-15,K8S course in Copenhagen
+2022-05-08,2022-05-15,Modern C++ course in Kongsberg
+2022-05-26,2022-06-01,Monaco
+2022-06-19,2022-06-26,Spring Boot and k8S courses in Oslo
+2022-07-06,2022-07-21,Bardolino
+2022-08-21,2022-08-26,Pyspark course in Oslo
+2022-08-31,2022-09-04,Python Intro course in Oslo
+2022-09-04,2022-09-18,C++ courses in Kongsberg
+2022-09-21,2022-09-29,Rhodes
+2022-09-04,2022-09-14,Madrid and Oslo
+2022-11-06,2022-11-13,K8S course in Oslo
+2023-01-08,2023-01-14,Advanced Java course in Oslo
+2023-01-23,2023-01-29,C++ Programming course in Copenhagen
+2023-02-12,2023-02-18,Spring Boot course in Bergen
+2023-03-12,2023-03-19,Spring Boot course in Sogndal
+2023-03-19,2023-03-23,Spring Boot course in Oslo
+2023-04-01,2023-04-09,Skiing in St Anton
+2023-04-16,2023-04-22,C++ in Denmark
+2023-05-08,2023-05-13,PySpark in Oslo
+2023-05-15,2023-05-19,Prague???
+2023-05-29,2023-06-01,Andalsnes???
+2023-06-04,2023-06-11,C++ in Kongsberg
+2023-06-11,2023-06-16,Spring Boot course in Oslo
+2023-06-25,2023-06-29,C++ TDD in Kongsberg???
+2023-07-05,2023-07-20,Switzerland and France
+2023-08-30,2023-09-10,Bardolino
+2023-09-10,2023-09-17,React in Sogndal???
+2023-09-17,2023-09-24,C++ in Kongsberg
+2023-10-01,2023-10-08,C++ in Kongsberg
+2023-10-08,2023-10-15,C++ in Kongsberg???
+2023-10-15,2023-10-22,C++ in Kongsberg
+2023-12-03,2023-12-09,C++ Programming course in Copenhagen

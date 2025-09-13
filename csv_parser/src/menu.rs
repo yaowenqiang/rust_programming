@@ -36,7 +36,7 @@ fn display_all_visits(visits: &Vec<Visit>) {
 }
 
 fn display_days_within_period_of_interest(visits: &Vec<Visit>) {
-    let message = String::from("What reference date do you want to usr ? [yyy-mm-dd]:");
+    let message = String::from("What reference date do you want to use ? [yyy-mm-dd]:");
     let mut date = util::prompt_for_date(&message);
     let mut records: Vec<Record> = Vec::new();
 

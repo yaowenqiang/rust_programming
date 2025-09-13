@@ -40,7 +40,7 @@ impl Display for Visit {
     fn fmt(&self, f: &mut Formatter) -> Result {
         write!(
             f,
-            "{},{}.{}\n",
+            "{},{},{}\n",
             self.start_date, self.end_date, self.description
         )
     }
