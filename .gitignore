@@ -23,3 +23,4 @@ rust_python/target
 vendor
 target
 csv_parser/target
+access_mysql/target
